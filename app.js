@@ -114,6 +114,8 @@ const app = {
         $('.dashboard h2').innerText = this.currentSong.name;
         $('.cd-thumb').style.backgroundImage = `url('${this.currentSong.image}')`;
         audio.src = this.currentSong.path;
+        $('.active').classList.remove('active');
+        this.render();
     }
     ,
     handleSong: function(){
@@ -158,12 +160,12 @@ const app = {
         }
         btnNext.onclick = function () {
             _this.nextMusic();
-            app.render();
+            
             
         }
         btnPrev.onclick = function () {
             _this.prevMusic();
-            _this.render();
+            
         }
 
         btnRepeat.onclick = function(){
